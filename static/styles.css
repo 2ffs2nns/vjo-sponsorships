@@ -1,0 +1,42 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#thank_you_sponsors {
+    background-color: #018DCF;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+img.rotate {
+    max-height: 80vh;
+    max-width: 80vw;
+    width: 80%;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    position: fixed; /* Position the image */
+    top: 60%; /* Align the top of the image to the vertical center */
+    left: 50%; /* Align the left side of the image to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the image perfectly */
+}
+
+img#thank_you_sponsors {
+    max-height: 80vh;
+    max-width: 80vw;
+    width: 80%;
+    display: block;
+    position: fixed;
+    top: 0;
+    transform: translate(-50%, -50%); /* Center the image perfectly */
+}
+.bg {
+    width: 100%;
+    max-height: 80vh;
+    display: block;
+    position: fixed;
+    top: 0;
+}

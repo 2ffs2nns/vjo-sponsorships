@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Images</title>
+</head>
+<body>
+    <h1>Upload Images</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    <form method="post" action="{{ url_for('delete') }}">
+        <h2>Delete Images</h2>
+        {% if image_files %}
+            {% for image_file in image_files %}
+                <input type="checkbox" name="image" value="{{ image_file }}">{{ image_file }}<br>
+            {% endfor %}
+            <input type="submit" value="Delete Selected">
+        {% else %}
+            <p>No images available for deletion.</p>
+        {% endif %}
+    </form>
+</body>
+</html>

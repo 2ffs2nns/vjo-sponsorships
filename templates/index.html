@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VJO Sponsors</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <div id="thank_you_sponsors" align="center">
+        <img src="{{ url_for('static', filename='header/thank_you_sponsors.png') }}" class="thank_you_sponsors">
+    </div>
+
+    <div id="rotating_images">
+        {% for image_file in image_files %}
+            <img src="{{ url_for('static', filename='images/' + image_file) }}" style="display: none;" class="rotate">
+        {% endfor %}
+    </div>
+
+    <script>
+        var images = document.querySelectorAll('#rotating_images img');
+        var index = 0;
+        function rotateImages() {
+            images[index].style.display = 'none';
+            index = (index + 1) % images.length;
+            images[index].style.display = 'block';
+        }
+        setInterval(rotateImages, {{ rotation_interval * 1000 }});
+    </script>
+</body>
+</html>
